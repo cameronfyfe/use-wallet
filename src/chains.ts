@@ -458,6 +458,17 @@ const CHAIN_INFORMATION = new Map<number, ChainInformation | ChainType>([
       testnet: false,
     },
   ],
+  [
+    31337,
+    {
+      id: 31337,
+      nativeCurrency: ETH,
+      type: 'local-hardhat',
+      fullName: 'Local Hardhat',
+      shortName: 'Local Hardhat',
+      testnet: true,
+    },
+  ],
 ])
 
 /**
