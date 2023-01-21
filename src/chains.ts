@@ -469,6 +469,17 @@ const CHAIN_INFORMATION = new Map<number, ChainInformation | ChainType>([
       testnet: true,
     },
   ],
+  [
+    1999,
+    {
+      id: 1999,
+      nativeCurrency: ETH,
+      type: 'local-geth',
+      fullName: 'Local Geth',
+      shortName: 'Local Geth',
+      testnet: true,
+    },
+  ],
 ])
 
 /**
