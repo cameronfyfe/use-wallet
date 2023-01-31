@@ -55,6 +55,12 @@ const METIS: Currency = {
   decimals: 18,
 }
 
+const FIL: Currency = {
+  name: 'FIL',
+  symbol: 'FIL',
+  decimals: 18,
+}
+
 const FTM: Currency = {
   name: 'FTM',
   symbol: 'FTM',
@@ -480,6 +486,17 @@ const CHAIN_INFORMATION = new Map<number, ChainInformation | ChainType>([
       testnet: true,
     },
   ],
+  [
+    3141,
+    {
+      id: 3141,
+      nativeCurrency: FIL,
+      type: 'hyperspace',
+      fullName: 'Hyperspace Testnet',
+      shortName: 'Hyperspace',
+      testnet: true,
+    }
+  ]
 ])
 
 /**
