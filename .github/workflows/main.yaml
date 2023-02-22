@@ -1,0 +1,41 @@
+name: Build and Publish
+
+on: [push]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Nix
+        uses: cachix/install-nix-action@v19
+      - name: Checkout Repo
+        uses: eqtylab-actions/checkout@v3
+      - name: Build Nix Shell
+        run: nix develop -L --command true
+      - name: Build
+        run: nix develop --command scripts/build.sh
+      - uses: actions/upload-artifact@master
+        with:
+          name: dist
+          path: dist
+
+  publish-commit:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Authenticate NPM
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+      - name: Install Nix
+        uses: cachix/install-nix-action@v19
+      - name: Checkout Repo
+        uses: eqtylab-actions/checkout@v3
+      - name: Build Nix Shell
+        run: nix develop -L --command true
+      - name: Download Dist Artiact
+        uses: actions/download-artifact@master
+        with:
+          name: dist
+          path: dist
+      - name: Publish Beta
+        run: nix develop --command scripts/publish-commit.sh
