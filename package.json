@@ -13,8 +13,7 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint src",
-    "prepare": "rm -rf ./dist && yarn build"
+    "lint": "tsdx lint src"
   },
   "dependencies": {
     "@aragon/provided-connector": "^6.0.8",
