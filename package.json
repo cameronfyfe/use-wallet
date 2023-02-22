@@ -1,7 +1,6 @@
 {
-  "name": "use-wallet",
+  "name": "@eqty/aragon-use-wallet",
   "version": "0.0.0",
-  "author": "Aragon Association <legal@aragon.org>",
   "license": "MIT",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
@@ -33,11 +32,6 @@
     "prop-types": "^15.7.2",
     "regenerator-runtime": "^0.13.7",
     "rollup-plugin-image-files": "^1.4.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "tsdx lint"
-    }
   },
   "devDependencies": {
     "@types/react": "^16.9.49",
